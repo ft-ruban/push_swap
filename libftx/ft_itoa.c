@@ -6,12 +6,11 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:49:41 by ldevoude          #+#    #+#             */
-/*   Updated: 2024/12/11 09:06:20 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/04 10:59:17 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 static char	*convert(long n, char *result, int length)
 {

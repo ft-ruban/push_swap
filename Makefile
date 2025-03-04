@@ -6,7 +6,7 @@
 #    By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:37 by ldevoude          #+#    #+#              #
-#    Updated: 2025/03/04 08:10:01 by ldevoude         ###   ########lyon.fr    #
+#    Updated: 2025/03/04 09:48:12 by ldevoude         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,6 +76,7 @@ LIBFTX_SRC     =   $(addsuffix .c, \
 						ft_isalpha \
 						ft_isascii \
 						ft_isdigit \
+						ft_isintsized \
 						ft_isprint \
 						ft_itoa \
 						ft_itoa_hexx\

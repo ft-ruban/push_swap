@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:07:07 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/02/27 13:09:49 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/04 10:59:25 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # define LIBFT_H
 # define TRUE 1
 # define FALSE 0
+
+#include  <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "get_next_line/get_next_line.h"
@@ -28,6 +30,7 @@ int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
+int	    ft_isintsized(const char *nptr);
 int		ft_isprint(int c);
 char	*ft_itoa_hexx(unsigned long nbr);
 char	*ft_itoa(int n);
