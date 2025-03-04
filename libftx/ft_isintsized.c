@@ -14,7 +14,6 @@ static int	convert_ascii_to_int(int i, const char *nptr, int negative)
 	}
 	if (negative == TRUE)
 		result *= -1;
-	ft_printf("int max : %d \n int min : %d \n result : %d \n", INT_MAX,INT_MIN,result);
     if(result > 2147483647 || result < -2147483648)
         return (1);
     else 
@@ -26,7 +25,6 @@ int	ft_isintsized(const char *nptr)
 	int	i;
 	int	negative;
 
-	ft_printf("test %s\n", nptr);
 	negative = FALSE;
 	i = 0;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
