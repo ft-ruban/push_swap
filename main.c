@@ -6,30 +6,18 @@
 //TOREM instructions doivent être separées par un ’\n’ et rien d’autre
 //TOREM at first the first arg should be at the top then the smallest num
 
+
+
 int    error_checker (char *array_a, char *argv[])
 {   
     ft_printf("%s = argv \n", argv[0]);
     ft_printf("%s = array_a\n", array_a);
     //above = tests bellow = checker en theorie j'ai meme pas besoin de array_a
-    int i;
-    int j;
-
-    j = 0;
-    i = 1;
-    while (argv[i] != 0)
-    {
-        while(argv[i][j] != 0)
-        {
-            ft_printf("avant isdigit :%c \n",argv[i][j]);
-            if (!ft_isdigit((char)argv[i][j])) //todo libftx function that check if bigger than an int + is there dupli
-                return (1);
-            j++;
-        }
-        j = 0;
-        i++;
-    }
-        //if no int, bigger than an int, andor duplicates
-        return(0);
+    if(error_checker_is_digit(argv))
+        return (1);
+    
+    //if no int(FAIT), bigger than an int, andor duplicates
+    return(0);
 }
 
 int main(int argc, char *argv[])
