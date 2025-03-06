@@ -32,16 +32,7 @@
 //     return 0;
 // }
 
-int *algo_step_one(int *array_a, int i)
-{
-    while (i >= 0)
-    {
-        printf("DANS algo_step_one array_a[%d] : %d\n", i, array_a[i]);
-        //printf("array_a[%d] : %d\n",i ,array_a[i]);
-        i--;
-    }
-    return (array_a);
-}
+
 
 int main(int argc, char *argv[])
 {
@@ -72,7 +63,9 @@ int main(int argc, char *argv[])
         i--;
     }
     i = argc - 2; //TORM WITH TEST ABOVE
-    array_a = algo_step_one(array_a, i);
+    array_a = steps_push_swap(array_a, i);
+    if (!array_a)
+        return(error_message(5));
     return (0);
 }
 //+++radix ++turc

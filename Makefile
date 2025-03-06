@@ -6,7 +6,7 @@
 #    By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:37 by ldevoude          #+#    #+#              #
-#    Updated: 2025/03/06 11:19:03 by ldevoude         ###   ########lyon.fr    #
+#    Updated: 2025/03/06 14:29:59 by ldevoude         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,7 @@ RED            =   \033[1;31m
 #####################################################
 PUSH_SWAP_SRC    =   $(addsuffix .c, \
 						main \
+						algorithm \
 						error)
 
 LIBFTX_SRC     =   $(addsuffix .c, \
