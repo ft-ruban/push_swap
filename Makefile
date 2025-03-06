@@ -6,7 +6,7 @@
 #    By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:37 by ldevoude          #+#    #+#              #
-#    Updated: 2025/03/03 14:51:49 by ldevoude         ###   ########lyon.fr    #
+#    Updated: 2025/03/06 11:19:03 by ldevoude         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,9 +64,11 @@ RED            =   \033[1;31m
 #					VARIABLES SOURCES				#
 #####################################################
 PUSH_SWAP_SRC    =   $(addsuffix .c, \
-						main)
+						main \
+						error)
 
 LIBFTX_SRC     =   $(addsuffix .c, \
+						ft_argv_to_int_array\
 						ft_atoi \
 						ft_atop \
 						ft_bzero \
@@ -75,6 +77,7 @@ LIBFTX_SRC     =   $(addsuffix .c, \
 						ft_isalpha \
 						ft_isascii \
 						ft_isdigit \
+						ft_isintsized \
 						ft_isprint \
 						ft_itoa \
 						ft_itoa_hexx\
