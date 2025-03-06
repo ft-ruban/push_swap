@@ -6,19 +6,30 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/06 14:33:07 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/06 17:49:44 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftx/libft.h"
-#include "stdio.h" //TORM BFRPUSH
+
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
+#include "libftx/libft.h"
+#include "stdio.h" //TORM BFRPUSH
 # define TRUE 1
 # define FALSE 0
 
+typedef struct s_stack_node
+{
+    int     value;
+    int     index;
+    int     cost;
+    int     above_average;
+    int     cheaper;
+    struct s_stack_node *target_node;
+    struct s_stack_node *next;
+    struct s_stack_node *prev;
+} t_stack_node;
 #endif
 
 int     main(int argc, char *argv[]);

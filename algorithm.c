@@ -1,5 +1,7 @@
 #include "push_swap.h"
 
+//void push_b()
+
 int *step_one (int *array_a, int *array_b, int i)
 {
     while (i != -1)
@@ -19,6 +21,8 @@ int *steps_push_swap(int *array_a, int i)
     array_b = malloc((i + 1) * sizeof(int));
     if (!array_b) //free a?
         return (NULL);
+    array_b[0] = NULL;
+    printf("ARRAY_B[0] = %d",array_b[0]); 
     while (j >= 0)
     {
         printf("DANS STEPS_PUSH_SWAP array_a[%d] : %d\n", j, array_a[j]);
