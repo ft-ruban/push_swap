@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:07:07 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/04 10:59:25 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/06 11:18:33 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "get_next_line/get_next_line.h"
 # include "printf/ft_printf.h"
 
+int	argv_to_int_array(char *argv[], int argc, int **array_a);
 int		ft_atoi(const char *nptr);
 double	ft_atop(const char *nptr);
 void	ft_bzero(void *s, size_t n);
