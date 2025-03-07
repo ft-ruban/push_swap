@@ -6,7 +6,7 @@
 #    By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:37 by ldevoude          #+#    #+#              #
-#    Updated: 2025/03/06 14:42:34 by ldevoude         ###   ########lyon.fr    #
+#    Updated: 2025/03/07 17:32:46 by ldevoude         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,8 @@ PUSH_SWAP_SRC    =   $(addsuffix .c, \
 						main \
 						algorithm \
 						error \
-						swap_functions)
+						swap_functions \
+						utils)
 
 LIBFTX_SRC     =   $(addsuffix .c, \
 						ft_argv_to_int_array\

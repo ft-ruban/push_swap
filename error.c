@@ -1,10 +1,6 @@
 #include "push_swap.h"
 
-int error_message(int code)
-{
-    ft_printfd("ERROR %d\n",code);
-    return (code);
-}
+
 
 int error_duplicate_checker(int *array_a, int size_array_a)
 {
@@ -74,11 +70,31 @@ int    error_checker_is_digit (char *argv[])
     return (0);
 }
 
-int    error_checker (char *argv[])
+int error_message(int code, t_stacks *stacks)
+{
+    if(stacks)
+        free (stacks);
+    ft_printfd("ERROR %d\n",code);
+    exit(code);
+}
+
+int    error_checker (char *argv[], int argc, t_stacks *stacks)
 {   
+    int     *stack_a;
+    size_t  size_stack_a;
+
+    size_stack_a = argc - 2;
     if(error_checker_is_digit(argv))
-        return (1);
+        error_message(DIGIT_ERROR, stacks);
     if (error_bigger_than_int(argv))
-        return (1);
+        error_message(INT_SIZED_ERROR, stacks);
+    if (argv_to_int_array (argv, argc, &stack_a))
+        error_message(MALLOC_ERROR, stacks);
+    if (error_duplicate_checker (stack_a, argc - 2))
+    {
+        free(stack_a);
+        error_message(DUPLICATE_ERROR, stacks);
+    }
+    init_stacks(size_stack_a, stacks, stack_a);
     return(0);
 }
