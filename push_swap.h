@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/07 17:35:02 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/10 08:42:51 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int     error_message          (int code, t_stacks *stacks);
 void    free_struct            (t_stacks *s);
 void    init_stacks            (size_t size_stack_a, t_stacks *stacks, int *stack_a);
 int     *step_one              (int *array_a, int *array_b, int i);
-int     steps_push_swap       (t_stacks *stacks);
+int     steps_push_swap        (t_stacks *stacks);
+void    swap_a                 (t_stacks *s);
 int     error_bigger_than_int  (char *argv[]);
