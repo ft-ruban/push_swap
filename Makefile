@@ -6,7 +6,7 @@
 #    By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:37 by ldevoude          #+#    #+#              #
-#    Updated: 2025/03/10 15:47:12 by ldevoude         ###   ########lyon.fr    #
+#    Updated: 2025/03/10 15:51:41 by ldevoude         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,8 @@ PUSH_SWAP_SRC    =   $(addsuffix .c, \
 
 PUSH_SWAP_MOVES_SRC = $(addsuffix .c, \
 						moves_between_arrays \
-						moves_push)
+						moves_push \
+						moves_rotate)
 						
 LIBFTX_SRC     =   $(addsuffix .c, \
 						ft_argv_to_int_array\
