@@ -6,7 +6,7 @@
 #    By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:37 by ldevoude          #+#    #+#              #
-#    Updated: 2025/03/10 08:49:22 by ldevoude         ###   ########lyon.fr    #
+#    Updated: 2025/03/10 09:05:47 by ldevoude         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,8 @@ PUSH_SWAP_SRC    =   $(addsuffix .c, \
 						main \
 						algorithm \
 						error \
-						moves_between_arrays\
+						moves_between_arrays \
+						moves_push \
 						swap_functions \
 						utils)
 
