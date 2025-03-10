@@ -17,9 +17,10 @@ int steps_push_swap(t_stacks *stacks)
     int j;
     
     j = stacks->size_a;
+    //printf("value of j = %d", j);
     while (j >= 0)
     {
-        //printf("DANS STEPS_PUSH_SWAP array_a[%d] : %d\n", j, stacks->array_a[j]);
+        printf("DANS STEPS_PUSH_SWAP array_a[%d] : %d\n", j, stacks->array_a[j]);
         j--;
     }
     j = stacks->size_a;
