@@ -20,7 +20,7 @@ void    init_stacks(size_t size_stack_a, t_stacks *s, int *stack_a)
         free(stack_a);
         free_struct(s);
     }
-    while (i < size_stack_a + 1)
+    while (i <= size_stack_a)
     {
         s->array_a[i] = stack_a[i];
         i++;
