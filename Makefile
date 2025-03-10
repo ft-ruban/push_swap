@@ -6,7 +6,7 @@
 #    By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:37 by ldevoude          #+#    #+#              #
-#    Updated: 2025/03/10 09:05:47 by ldevoude         ###   ########lyon.fr    #
+#    Updated: 2025/03/10 15:47:12 by ldevoude         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ LIBLIBFTX 	=   $(DIR_LIBFTX)/libftx.a
 #					DIRECTORY						#
 #####################################################
 DIR_PUSH_SWAP  =   .
+DIR_PUSH_SWAP_MOVES = ./moves_functions
 DIR_PRINTF     =   ./libftx/printf
 DIR_GNL        =   ./libftx/get_next_line
 DIR_LIBFTX     =   ./libftx
@@ -48,7 +49,7 @@ OBJ_DIR        =   obj_push_swap
 #####################################################
 #					HEADER  						#
 #####################################################
-HEADER_PUSH_SWAP =   $(DIR_PUSH_SWAP)/push_swap.h					
+HEADER_PUSH_SWAP =   $(DIR_PUSH_SWAP)/header/push_swap.h					
 HEADER_PRINTF  =   $(DIR_PRINTF)/printf.h
 HEADER_GNL 	   =   $(DIR_GNL)/get_next_line.h
 HEADER_LIBFTX  =   $(DIR_LIBFTX)/libft.h
@@ -67,11 +68,12 @@ PUSH_SWAP_SRC    =   $(addsuffix .c, \
 						main \
 						algorithm \
 						error \
-						moves_between_arrays \
-						moves_push \
-						swap_functions \
 						utils)
 
+PUSH_SWAP_MOVES_SRC = $(addsuffix .c, \
+						moves_between_arrays \
+						moves_push)
+						
 LIBFTX_SRC     =   $(addsuffix .c, \
 						ft_argv_to_int_array\
 						ft_atoi \
@@ -128,6 +130,7 @@ PRINTF_SRC 	   =   $(addsuffix .c, \
 #####################################################
 
 PUSH_SWAP_OBJ = $(addprefix $(OBJ_DIR)/, $(PUSH_SWAP_SRC:.c=.o))
+PUSH_SWAP_MOVES_OBJ = $(addprefix $(OBJ_DIR)/, $(PUSH_SWAP_MOVES_SRC:.c=.o))
 LIBFTX_OBJ    = $(addprefix $(OBJ_DIR)/, $(LIBFTX_SRC:.c=.o))
 GNL_OBJ       = $(addprefix $(OBJ_DIR)/, $(GNL_SRC:.c=.o))
 PRINTF_OBJ    = $(addprefix $(OBJ_DIR)/, $(PRINTF_SRC:.c=.o))
@@ -164,6 +167,8 @@ debug           :
 					@echo "Current directory: $(shell pwd)"
 					@echo "Checking push_swap files\:"
 					@ls -l $(DIR_PUSH_SWAP)
+					@echo "Checking moves_functions files\:"
+					@ls -l $(DIR_PUSH_SWAP_MOVES)
 					@echo "Checking libftx files\:"
 					@ls -l $(DIR_LIBFTX)
 					@echo "Checking gnl files\:"
@@ -178,15 +183,15 @@ re               :	fclean all
 #					COMMANDS						#
 #####################################################
 
-$(NAME): $(OBJ_DIR) $(PUSH_SWAP_OBJ) $(LIBFTX_OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
-		 $(CC) $(CFLAGS) -o $(NAME) $(PUSH_SWAP_OBJ) $(LIBFTX_OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
+$(NAME): $(OBJ_DIR) $(PUSH_SWAP_OBJ) $(PUSH_SWAP_MOVES_OBJ) $(LIBFTX_OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
+		 $(CC) $(CFLAGS) -o $(NAME) $(PUSH_SWAP_OBJ) $(PUSH_SWAP_MOVES_OBJ) $(LIBFTX_OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
 		@echo "$(GREEN) $(NAME) is now ready to run ／人◕ ‿‿ ◕人＼ "
-
-$(OBJ_DIR):
-				mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o	   : $(DIR_PUSH_SWAP)/%.c | $(OBJ_DIR)
 					 $(CC) $(CFLAGS) -I$(DIR_PUSH_SWAP) -o $@ -c $<
+
+$(OBJ_DIR)/%.o	   : $(DIR_PUSH_SWAP_MOVES)/%.c | $(OBJ_DIR)
+					 $(CC) $(CFLAGS) -I$(DIR_PUSH_SWAP_MOVES) -o $@ -c $<
 
 $(OBJ_DIR)/%.o	   : $(DIR_LIBFTX)/%.c | $(OBJ_DIR)
 					 $(CC) $(CFLAGS) -I$(DIR_LIBFTX) -o $@ -c $<
@@ -198,6 +203,9 @@ $(OBJ_DIR)/%.o	   : $(DIR_PRINTF)/%.c | $(OBJ_DIR)
 					 $(CC) $(CFLAGS) -I$(DIR_PRINTF) -o $@ -c $<
 
 $(DIR_PUSH_SWAP)/%.o  :      $(DIR_PUSH_SWAP)/%.c $(HEADER_PUSH_SWAP)
+											$(CC) $(CFLAGS) -c $< -o $@
+
+$(DIR_PUSH_SWAP_MOVES)/%.o  :      $(DIR_PUSH_SWAP_MOVES)/%.c $(HEADER_PUSH_SWAP)
 											$(CC) $(CFLAGS) -c $< -o $@
 
 $(DIR_LIBFTX)/%.o   :      $(DIR_LIBFTX)/%.c  $(HEADER_PUSH_SWAP)

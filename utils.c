@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "header/push_swap.h"
 
 void    init_stacks(size_t size_stack_a, t_stacks *s, int *stack_a)
 {
