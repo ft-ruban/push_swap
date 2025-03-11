@@ -74,7 +74,7 @@ int error_message(int code, t_stacks *stacks)
 {
     if(stacks)
         free (stacks);
-    ft_printfd("ERROR %d\n",code);
+    ft_printfd("ERROR %d\n",code); //TORM code in cases of morons
     exit(code);
 }
 

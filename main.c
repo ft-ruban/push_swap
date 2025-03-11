@@ -10,8 +10,6 @@ int main(int argc, char *argv[])
     if(argc < 2)
         return (error_message(ARGUMENT_ERROR, stacks));
     error_checker (argv, argc, stacks); 
-    //printf("argc = %d\n", argc);
-    //printf("array_a = %d\n", stacks->array_a[0]);
     if (!steps_push_swap(stacks))
         return(error_message(5, stacks));
     return (0);

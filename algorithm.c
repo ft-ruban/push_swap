@@ -17,7 +17,6 @@ int steps_push_swap(t_stacks *stacks)
     size_t j;
     
     j = 0;
-    //printf("value of j = %d", j);
     while (j < stacks->size_a + 1)
     {
         //printf("DANS STEPS_PUSH_SWAP array_a[%zu] : %d\n", j, stacks->array_a[j]);
@@ -26,7 +25,8 @@ int steps_push_swap(t_stacks *stacks)
     j = 0;
     stacks->array_b[0] = -5;
     stacks->array_b[1] = -10;
-    rotate_ab (stacks, stacks->size_a - 1);
+    //reverse_rotate_a (stacks, stacks->size_a - 1);
+    push_b(stacks);
     printf("VALUE OF SIZE_A %zu \n",stacks->size_a);
     //step_one (array_a, array_b, i);
      while (j < stacks->size_a )
