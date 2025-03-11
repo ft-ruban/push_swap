@@ -4,6 +4,14 @@
 
 void step_one (t_stacks *s)
 {
+    if(s->size_a == 2)
+    {  
+        if (s->array_a[0] > s->array_a[1])
+        {
+            swap_a(s);
+        }
+        exit(0);
+    }
     push_b(s);
     push_b(s);
 }

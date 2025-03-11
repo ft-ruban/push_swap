@@ -27,6 +27,7 @@ void rotate_a(t_stacks *s, int index_max)
     j = -1;
     while (++j <= index_max)
         s->array_a[j] = buff[i++];
+    ft_printf("ra\n");
 }
 
 void rotate_b(t_stacks *s, int index_max)
@@ -45,6 +46,7 @@ void rotate_b(t_stacks *s, int index_max)
     j = -1;
     while (++j <= index_max)
         s->array_b[j] = buff[i++];
+    ft_printf("rb\n");
 }
 void rotate_ab(t_stacks *s, int index_max)
 {
@@ -71,5 +73,6 @@ void rotate_ab(t_stacks *s, int index_max)
     j = -1;
     while (++j <= index_max)
         s->array_b[j] = buff[i++];
+    ft_printf("rr\n");
 }
 

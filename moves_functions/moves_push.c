@@ -43,7 +43,7 @@ void push_a(t_stacks *s)
         i--;
     }
     s->array_a[0] = buff_target;
-    printf("ARRAY_A[6] : %d", s->array_a[6]);
+    ft_printf("pa\n");
 }
 void push_b(t_stacks *s)
 {
@@ -67,4 +67,5 @@ void push_b(t_stacks *s)
         printf("I = %zu\narray_b[%zu] %d\narray_b[%zu] %d\n", i, i - 1, s->array_b[i-1], i, s->array_b[i]);
     }
     s->array_b[0] = buff_target;
+    ft_printf("pb\n");
 }

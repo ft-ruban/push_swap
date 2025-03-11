@@ -18,7 +18,7 @@ void swap_a (t_stacks *s)
     buff = s->array_a[0];
     s->array_a[0] = s->array_a[1];
     s->array_a[1] = buff;
-    return;
+    ft_printf("sa\n");
 }
 
 void swap_b (t_stacks *s)
@@ -29,7 +29,7 @@ void swap_b (t_stacks *s)
     buff = s->array_b[0];
     s->array_b[0] = s->array_b[1]; 
     s->array_b[1] = buff;
-    return;
+    ft_printf("sb\n");
 }
 
 void swap_ab (t_stacks *s)
@@ -43,5 +43,5 @@ void swap_ab (t_stacks *s)
     buff = s->array_a[0];
     s->array_a[0] = s->array_a[1]; 
     s->array_a[1] = buff;
-    return;
+    ft_printf("ss\n");
 }
