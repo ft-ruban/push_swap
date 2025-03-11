@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/10 15:23:36 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/11 10:37:21 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ void    free_struct            (t_stacks *s);
 void    init_stacks            (size_t size_stack_a, t_stacks *stacks, int *stack_a);
 void    push_a                 (t_stacks *s);
 void    push_b                 (t_stacks *s);
+void    rotate_a               (t_stacks *s, int index_max);
+void    rotate_ab              (t_stacks *s, int index_max);
+void    rotate_b               (t_stacks *s, int index_max);
 int     *step_one              (int *array_a, int *array_b, int i);
 int     steps_push_swap        (t_stacks *stacks);
 void    swap_a                 (t_stacks *s);
