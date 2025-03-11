@@ -26,7 +26,7 @@ int steps_push_swap(t_stacks *stacks)
     j = 0;
     stacks->array_b[0] = -5;
     stacks->array_b[1] = -10;
-    rotate_b (stacks, stacks->size_a - 1);
+    rotate_ab (stacks, stacks->size_a - 1);
     printf("VALUE OF SIZE_A %zu \n",stacks->size_a);
     //step_one (array_a, array_b, i);
      while (j < stacks->size_a )
