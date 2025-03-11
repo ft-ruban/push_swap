@@ -14,7 +14,5 @@ int main(int argc, char *argv[])
         return(error_message(5, stacks));
     return (0);
 }
-//+++radix ++turc
-//verifier si deja trié
-//si 3 arg le trier directement car sinon ca va faire trop d'iter
-//j'ai pas besoin de swap et double swap (swap a si)
+//I do turkish
+//verifier si deja trié ?

@@ -6,7 +6,7 @@ void    init_stacks(size_t size_stack_a, t_stacks *s, int *stack_a)
 
     i = 0;
     s->size_a  = size_stack_a;
-    s->size_b  = size_stack_a; //maybe 0?
+    s->size_b  = 0; //maybe 0?
     s->array_a = ft_calloc(size_stack_a, sizeof(int));
     s->array_b = ft_calloc(size_stack_a, sizeof(int));
     s->target_a = ft_calloc(size_stack_a, sizeof(int));
