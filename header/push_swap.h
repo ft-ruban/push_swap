@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/11 11:57:25 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/11 13:53:36 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void    reverse_rotate_b       (t_stacks *s, int index_max);
 void    rotate_a               (t_stacks *s, int index_max);
 void    rotate_ab              (t_stacks *s, int index_max);
 void    rotate_b               (t_stacks *s, int index_max);
-int     *step_one              (int *array_a, int *array_b, int i);
+void    step_one               (t_stacks *s);
 int     steps_push_swap        (t_stacks *stacks);
 void    swap_a                 (t_stacks *s);
 void    swap_b                 (t_stacks *s);

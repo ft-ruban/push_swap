@@ -33,6 +33,7 @@ void push_a(t_stacks *s)
         s->array_b[i] = s->array_b[i+1];
         i++;
     }
+    s->array_b[i] = 0;
     buff_sort = s->array_a[0];
     
     //s->array_a[1] = buff_sort;
@@ -57,6 +58,7 @@ void push_b(t_stacks *s)
         s->array_a[i] = s->array_a[i+1];
         i++;
     }
+    s->array_a[i] = 0;
     buff_sort = s->array_b[0];
     while (i != 0) //unsure about the logic here bleh
     {

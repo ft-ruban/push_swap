@@ -16,7 +16,7 @@ void swap_a (t_stacks *s)
     int buff;
 
     buff = s->array_a[0];
-    s->array_a[0] = s->array_a[1]; 
+    s->array_a[0] = s->array_a[1];
     s->array_a[1] = buff;
     return;
 }

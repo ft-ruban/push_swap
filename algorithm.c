@@ -2,14 +2,10 @@
 
 //void push_b()
 
-int *step_one (int *array_a, int *array_b, int i)
+void step_one (t_stacks *s)
 {
-    while (i != -1)
-    {
-        array_b[i] =array_a[i];
-        i--;
-    }
-    return 0;
+    push_b(s);
+    push_b(s);
 }
 
 int steps_push_swap(t_stacks *stacks)
@@ -23,12 +19,12 @@ int steps_push_swap(t_stacks *stacks)
         j++;
     }
     j = 0;
-    stacks->array_b[0] = -5;
-    stacks->array_b[1] = -10;
+    // stacks->array_b[0] = -5;
+    // stacks->array_b[1] = -10;
     //reverse_rotate_a (stacks, stacks->size_a - 1);
-    push_b(stacks);
+    //push_b(stacks);
     printf("VALUE OF SIZE_A %zu \n",stacks->size_a);
-    //step_one (array_a, array_b, i);
+    step_one(stacks);
      while (j < stacks->size_a )
      {
          //printf("APRES SWAP_A array_a[%d] : %d\n", j, stacks->array_a[j]);
