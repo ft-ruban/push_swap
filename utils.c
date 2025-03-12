@@ -9,8 +9,8 @@ void    init_stacks(size_t size_stack_a, t_stacks *s, int *stack_a)
     s->size_b  = 0; //maybe 0?
     s->array_a = ft_calloc(size_stack_a, sizeof(int));
     s->array_b = ft_calloc(size_stack_a, sizeof(int));
-    s->target_a = ft_calloc(size_stack_a, sizeof(int));
-    s->target_b = ft_calloc(size_stack_a, sizeof(int));
+    s->target_a = ft_calloc(size_stack_a, sizeof(size_t));
+    s->target_b = ft_calloc(size_stack_a, sizeof(size_t));
     s->move_cost = ft_calloc(size_stack_a, sizeof(int));
     s->rr = ft_calloc(size_stack_a, sizeof(int));
     s->rrr = ft_calloc(size_stack_a, sizeof(int));

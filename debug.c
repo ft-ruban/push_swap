@@ -1,5 +1,18 @@
 #include "header/push_swap.h"
 
+void debug_assign_target(t_stacks *s)
+{
+    size_t i;
+    // size_t j;
+
+    i = 0;
+    while(i < s->size_a)
+    {
+        printf("Valeur de target_a[%zu] : %zu\n", i, s->target_a[i]);
+        i++;
+    }
+}
+
 void before_debug(t_stacks *s)
 {
     size_t j;

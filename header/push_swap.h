@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/12 07:33:57 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 08:58:13 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_stacks
 #endif
 
 int     main                   (int argc, char *argv[]);
+size_t  biggest_number_array   (t_stacks *s);
 int     error_bigger_than_int  (char *argv[]);
 int     error_checker          (char *argv[], int argc, t_stacks *stacks);
 int     error_checker_is_digit (char *argv[]);
@@ -62,3 +63,4 @@ void    swap_b                 (t_stacks *s);
 
 void    before_debug           (t_stacks *s);
 void    after_debug            (t_stacks *s);
+void    debug_assign_target    (t_stacks *s);
