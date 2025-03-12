@@ -30,32 +30,9 @@ void step_one (t_stacks *s)
 
 int steps_push_swap(t_stacks *stacks)
 {
-    size_t j;
-    
-    j = 0;
-    while (j < stacks->size_a)
-    {
-        printf("DANS STEPS_PUSH_SWAP array_a[%zu] : %d\n", j, stacks->array_a[j]);
-        j++;
-    }
-    j = 0;
-    printf("VALUE OF SIZE_A %zu \n",stacks->size_a);
+    before_debug(stacks);
     step_one(stacks);
-    printf("VALUE OF SIZE_A = %zu \n",stacks->size_a);
-     while (j < stacks->size_a )
-     {
-         //printf("APRES SWAP_A array_a[%d] : %d\n", j, stacks->array_a[j]);
-         printf("APRES STEPS array_a[%zu] : %d\n", j, stacks->array_a[j]);
-         j++;
-     }
-     j = 0;
-     printf("VALUE OF SIZE_B = %zu \n",stacks->size_b);
-     while (j < stacks->size_b)
-     {
-        printf("APRES STEPS array_b[%zu] : %d\n",j, stacks->array_b[j]);
-        j++;
-     }
-    //return (array_a);
+    after_debug(stacks);
     free_struct(stacks);
     return (1);
 }

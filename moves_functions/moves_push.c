@@ -66,7 +66,7 @@ void push_b(t_stacks *s)
     {
         s->array_b[i] = s->array_b[i-1];
         i--;
-        printf("I = %zu\narray_b[%zu] %d\narray_b[%zu] %d\n", i, i - 1, s->array_b[i-1], i, s->array_b[i]);
+        //printf("I = %zu\narray_b[%zu] %d\narray_b[%zu] %d\n", i, i - 1, s->array_b[i-1], i, s->array_b[i]);
     }
     s->array_b[0] = buff_target;
     s->size_a--;

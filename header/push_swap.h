@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/11 14:23:26 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 07:33:57 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,5 @@ int     steps_push_swap        (t_stacks *stacks);
 void    swap_a                 (t_stacks *s);
 void    swap_b                 (t_stacks *s);
 
+void    before_debug           (t_stacks *s);
+void    after_debug            (t_stacks *s);
