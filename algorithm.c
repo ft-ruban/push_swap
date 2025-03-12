@@ -14,34 +14,44 @@
 //     //int        median;
 // } t_stacks;
 
+
+//function seem to be working well, still need to make it smoller + make sure everything is fine.
+
 void assign_target_a(t_stacks *s) //to place into sort_utils whenever u finished
 {
     size_t i;
     size_t j;
     int    smallest_number_a;
     size_t biggest_number_b;
-    
+
     i = 0;
     biggest_number_b = biggest_number_array(s);
-    printf("BIGGEST NUMBER IS = %zu\n",biggest_number_b);
-    while(i < s->size_a)
+    while(i <= s->size_a)
     {
         j = 0;
-        smallest_number_a = 0;
+        smallest_number_a = TRUE;
         while(j < s->size_b)
         {
-            if (s->array_b[j] < s->array_a[i] && s->array_b[j] > s->array_b[s->target_a[i]])
+            if (s->array_b[j] < s->array_a[i] || (s->array_b[j] <= s->array_a[i] && smallest_number_a == TRUE)) //TOCHECK smallest number == true may be unecessary
             {    
-                smallest_number_a = 1;
-                printf("je passe ici\n");
-                s->target_a[i] = j;
+                if (!(smallest_number_a == FALSE && s->array_b[j] < s->array_b[s->target_a[i]]))
+                {
+                    smallest_number_a = FALSE;
+                    //printf("je passe ici%zu\n", i);
+                    s->target_a[i] = j;
+                }
+                else if (smallest_number_a == TRUE && s->array_b[j] > s->array_b[s->target_a[i]])
+                    s->target_a[i] = j;
             }
             j++;
         }
+        if (smallest_number_a == TRUE)
+            s->target_a[i] = biggest_number_b;
         i++;
     }
     debug_assign_target(s);
 }
+
 
 void step_two (t_stacks *s)
 {
