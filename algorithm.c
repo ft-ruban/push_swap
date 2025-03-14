@@ -13,49 +13,86 @@
 //     int        *rrr;
 //     //int        median;
 // } t_stacks;
-
-
-//function seem to be working well, still need to make it smoller + make sure everything is fine.
-
-void assign_target_a(t_stacks *s) //to place into sort_utils whenever u finished
+ 
+void assign_cost_a(t_stacks *s)
 {
-    size_t i;
-    size_t j;
-    int    smallest_number_a;
-    size_t biggest_number_b;
+    unsigned long i;
+    int j;
 
+    j = s->size_a;
     i = 0;
-    biggest_number_b = biggest_number_array(s);
-    while(i <= s->size_a)
+    while (i <= s->size_a / 2)
     {
-        j = 0;
-        smallest_number_a = TRUE;
-        while(j < s->size_b)
+        if (s->target_a[i] <= s->size_b / 2)
         {
-            if (s->array_b[j] < s->array_a[i] || (s->array_b[j] <= s->array_a[i] && smallest_number_a == TRUE)) //TOCHECK smallest number == true may be unecessary
-            {    
-                if (!(smallest_number_a == FALSE && s->array_b[j] < s->array_b[s->target_a[i]]))
-                {
-                    smallest_number_a = FALSE;
-                    //printf("je passe ici%zu\n", i);
-                    s->target_a[i] = j;
-                }
-                else if (smallest_number_a == TRUE && s->array_b[j] > s->array_b[s->target_a[i]])
-                    s->target_a[i] = j;
-            }
-            j++;
+            s->move_cost[i] = i + s->target_a[i];
+            printf("VALEUR DE MOVE_COST A %d \n", s->move_cost[i]);
+            //i++;
         }
-        if (smallest_number_a == TRUE)
-            s->target_a[i] = biggest_number_b;
+        else
+        {
+            s->move_cost[i] =  s->size_a - s->array_a[i];
+            printf("VALEUR DE MOVE_COST A %d \n", s->move_cost[i]);
+        }
+        // printf("VALEUR DE MOVE_COST %d \n", s->move_cost[i]);
         i++;
     }
-    debug_assign_target(s);
+    if (s->size_a % 2 == 0)
+    {
+        while (i <= s->size_a)
+        {
+            s->move_cost[i] = (s->size_a - i) + s->target_a[i] + 1;
+            printf("Valeur de i : %zu s->size_a %zu + target_a %zu\n", i, s->size_a, s->target_a[i]);
+            printf("VALEUR DE MOVE_COST %d \n", s->move_cost[i]);
+            i++;
+        }
+    } 
+    else
+    { 
+        s->move_cost[i] = (s->size_a - i) + s->target_a[i];
+        printf("Valeur de i : %zu s->size_a %zu + target_a %zu\n", i, s->size_a, s->target_a[i]);
+        printf("VALEUR DE MOVE_COST %d \n", s->move_cost[i]);
+        i++;
+        while (i < s->size_a)
+        {
+            s->move_cost[i] = (s->size_a - i) + s->target_a[i] + 1;
+            printf("Valeur de i : %zu s->size_a %zu + target_a %zu\n", i, s->size_a, s->target_a[i]);
+            printf("VALEUR DE MOVE_COST %d \n", s->move_cost[i]);
+            i++;
+        }
+    }
+
 }
 
 
+
+// void assign_cost_a(t_stacks *s)
+// {
+//     unsigned long i;
+//     int j;
+
+//     j = s->size_a;
+//     i = 0;
+//     while (i < s->size_a / 2)
+//     {
+//         s->move_cost[i] = i + s->target_a[i];
+//         printf("VALEUR DE MOVE_COST %d \n", s->move_cost[i]);
+//         i++;
+//     }
+//     while (i < s->size_a)
+//     {
+//         s->move_cost[i] = (i - s->size_a) * -1 + s->target_a[i];
+//         printf("VALEUR DE MOVE_COST %d \n", s->move_cost[i]);
+//         i++;
+//     }
+// }
+
 void step_two (t_stacks *s)
 {
+    //TODO while loop until size_a == 3
+    //also a function that will reset the targets maybe
     assign_target_a(s);
+    assign_cost_a(s);
 }
 
 void step_one (t_stacks *s)

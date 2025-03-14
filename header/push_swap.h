@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/12 08:58:13 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 15:41:41 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_stacks
 #endif
 
 int     main                   (int argc, char *argv[]);
+void    assign_cost_a          (t_stacks *s);
+void    assign_target_a        (t_stacks *s);
 size_t  biggest_number_array   (t_stacks *s);
 int     error_bigger_than_int  (char *argv[]);
 int     error_checker          (char *argv[], int argc, t_stacks *stacks);
