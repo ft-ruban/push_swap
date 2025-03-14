@@ -83,7 +83,7 @@ int    error_checker (char *argv[], int argc, t_stacks *stacks)
     int     *stack_a;
     size_t  size_stack_a;
 
-    size_stack_a = argc - 2;
+    size_stack_a = argc - 1;
     if(error_checker_is_digit(argv))
         error_message(DIGIT_ERROR, stacks);
     if (error_bigger_than_int(argv))

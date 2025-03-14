@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/12 15:41:41 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/14 10:27:42 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void    rotate_b               (t_stacks *s, int index_max);
 void    sort_three             (t_stacks *s);
 void    step_one               (t_stacks *s);
 int     steps_push_swap        (t_stacks *stacks);
+void    sub_cost_rr_rrr        (t_stacks *s);
 void    swap_a                 (t_stacks *s);
 void    swap_b                 (t_stacks *s);
 

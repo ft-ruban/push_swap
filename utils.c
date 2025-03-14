@@ -7,13 +7,13 @@ void    init_stacks(size_t size_stack_a, t_stacks *s, int *stack_a)
     i = 0;
     s->size_a  = size_stack_a;
     s->size_b  = 0; //maybe 0?
-    s->array_a = ft_calloc(size_stack_a, sizeof(int));
-    s->array_b = ft_calloc(size_stack_a, sizeof(int));
-    s->target_a = ft_calloc(size_stack_a, sizeof(size_t));
-    s->target_b = ft_calloc(size_stack_a, sizeof(size_t));
-    s->move_cost = ft_calloc(size_stack_a, sizeof(int));
-    s->rr = ft_calloc(size_stack_a, sizeof(int));
-    s->rrr = ft_calloc(size_stack_a, sizeof(int));
+    s->array_a = ft_calloc(size_stack_a + 1, sizeof(int));
+    s->array_b = ft_calloc(size_stack_a + 1, sizeof(int));
+    s->target_a = ft_calloc(size_stack_a + 1, sizeof(size_t));
+    s->target_b = ft_calloc(size_stack_a + 1, sizeof(size_t));
+    s->move_cost = ft_calloc(size_stack_a + 1, sizeof(int));
+    s->rr = ft_calloc(size_stack_a + 1, sizeof(int));
+    s->rrr = ft_calloc(size_stack_a + 1, sizeof(int));
      if (!s->array_a ||!s->array_b||!s->target_a||!s->target_b||!s->move_cost
         ||!s->rr||!s->rrr)
     {
