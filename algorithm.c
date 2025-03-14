@@ -49,7 +49,7 @@ void assign_cost_a(t_stacks *s)
     } 
     else
     { 
-        s->move_cost[i] = (s->size_a - i) + s->target_a[i];
+        s->move_cost[i] = (s->size_a - i) + s->target_a[i] + 1;
         printf("Valeur de i : %zu s->size_a %zu + target_a %zu\n", i, s->size_a, s->target_a[i]);
         printf("VALEUR DE MOVE_COST %d \n", s->move_cost[i]);
         i++;
