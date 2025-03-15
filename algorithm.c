@@ -27,10 +27,6 @@ void assign_cost_a(t_stacks *s)
             printf("VALEUR DE MOVE_COST A %d \n", s->move_cost[i]);
             //i++;
         }
-        // else if (())
-        // {
-        //     s->move_cost[i] = i + s->target_a[i];
-        // }
         else
         {
             s->move_cost[i] =  i + (s->size_b - s->target_a[i]);//s->size_a - s->size_b - s->target_a[i];//s->target_a[i] - 1;
@@ -167,8 +163,12 @@ void step_one (t_stacks *s)
     }
     else
     {
-        push_b(s);
-        push_b(s);
+        // push_b(s);
+        // push_b(s);
+        // push_b(s);
+        // push_b(s);
+        // push_b(s);
+        // push_b(s);
         push_b(s);
         push_b(s);
         step_two(s);
