@@ -18,13 +18,13 @@ void reverse_rotate_a(t_stacks *s, int index_max)
 
     i = 0;
     j = 0;
-    while (++j <= index_max)
+    while (++j </*=*/ index_max)
         buff[j] = s->array_a[i++];
-    buff[0] = s->array_a[index_max];
+    buff[0] = s->array_a[index_max - 1];
     i = 0;
-    j = -1;
-    while (++j <= index_max)
-        s->array_a[j] = buff[i++];
+    j = 0;
+    while (j <= index_max)
+        s->array_a[j++] = buff[i++];
     ft_printf("rra\n");
 }
 void reverse_rotate_b(t_stacks *s, int index_max)
@@ -35,13 +35,13 @@ void reverse_rotate_b(t_stacks *s, int index_max)
 
     i = 0;
     j = 0;
-    while (++j <= index_max)
+    while (++j </*=*/ index_max)
         buff[j] = s->array_b[i++];
-    buff[0] = s->array_b[index_max];
+    buff[0] = s->array_b[index_max - 1];
     i = 0;
-    j = -1;
-    while (++j <= index_max)
-        s->array_b[j] = buff[i++];
+    j = 0;
+    while (j <= index_max)
+        s->array_b[j++] = buff[i++];
     ft_printf("rrb\n");
 }
 void reverse_rotate_ab(t_stacks *s, int index_max)

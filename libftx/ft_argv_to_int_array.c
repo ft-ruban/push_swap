@@ -3,11 +3,11 @@
 int	argv_to_int_array(char *argv[], int argc, int **array_a)
 {
 	int i;
-	int j;
+	//int j;
 	int a;
 
 	i = 1;
-	j = 0;
+	//j = 0;
 	a = 0;
 	*array_a = malloc((argc - 1) * sizeof(int));
 	if (!array_a)

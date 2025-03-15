@@ -23,7 +23,7 @@ rrr : rra and rrb at the same time.*/
 void push_a(t_stacks *s)
 {
     int buff_target;
-    int buff_sort;
+    //int buff_sort;
     size_t i;
 
     buff_target = s->array_b[0];
@@ -34,7 +34,7 @@ void push_a(t_stacks *s)
         i++;
     }
     s->array_b[i] = 0;
-    buff_sort = s->array_a[0];
+    //buff_sort = s->array_a[0];
     
     //s->array_a[1] = buff_sort;
     while (i != 0) //unsure about the logic here bleh
@@ -50,7 +50,7 @@ void push_a(t_stacks *s)
 void push_b(t_stacks *s)
 {
     int buff_target;
-    int buff_sort;
+    //int buff_sort;
     size_t i;
 
     buff_target = s->array_a[0];
@@ -61,7 +61,7 @@ void push_b(t_stacks *s)
         i++;
     }
     s->array_a[i] = 0;
-    buff_sort = s->array_b[0];
+    //buff_sort = s->array_b[0];
     while (i != 0) //unsure about the logic here bleh
     {
         s->array_b[i] = s->array_b[i-1];

@@ -30,17 +30,101 @@
     }
     return (result);
  }
+void move_at_top_then_push (t_stacks *s, size_t cheapest)
+{
+    size_t counter_a;
+    size_t counter_b;
+
+    counter_a = cheapest;
+    counter_b = s->target_a[cheapest];
+    while (s->rr[cheapest] != 0)
+    {
+        rotate_ab(s, s->size_a);
+        s->rr[cheapest] -= 1;
+        //cheapest--;
+        counter_a--;
+        counter_b--;
+    }
+    while (s->rrr[cheapest] != 0)
+    {
+        reverse_rotate_ab(s, s->size_a);
+        s->rrr[cheapest] -= 1;
+        //cheapest++;
+        counter_a++;
+        counter_b++;
+    }
+
+    if (counter_a <= s->size_a / 2 && counter_a != 0)
+    {
+        while (counter_a != 0)
+        {
+           rotate_a(s, s->size_a);
+           counter_a--;
+        }
+    }
+    else if (counter_a > s->size_a / 2 && counter_a != s->size_a + 1)
+    {
+        while(counter_a != s->size_a + 1)
+        {
+            reverse_rotate_a(s, s->size_a);
+            counter_a++;
+        }
+    }
+    if (counter_b <= s->size_b / 2 && counter_b != 0)
+    {
+        while (counter_b != 0)
+        {
+            rotate_b(s, s->size_b);
+            counter_b--;
+        }
+    }
+    else if (counter_b > s->size_b / 2 && counter_b != s-> size_b + 1)
+    {
+        while(counter_b != s->size_b + 1)
+        {
+            reverse_rotate_b(s, s->size_b);
+            counter_b++;
+        }
+    }
+    push_b(s);
+    // while(counter_a != 0 && counter_a < s->size_a && counter_b < s->size_b && counter_b != 0 )
+    // {
+        
+    //     if (counter_a != 0)
+    //     {
+    //         if (counter_a <= s->size_a / 2)
+    //             {
+    //                 while (counter_a != 0)
+    //                 {
+    //                    rotate_a(s, s->size_a);
+    //                    counter_a--;
+    //                 }
+    //             }
+    //         else
+    //             {
+    //                 while (counter_a != size_)
+    //             }
+    //     }
+    // }
+}
 
 void step_two (t_stacks *s)
 {
     size_t cheapest;
     //TODO while loop until size_a == 3
     //also a function that will reset the targets maybe
-    assign_target_a(s);
-    assign_cost_a(s); //maybe if else condition depending of if even or odd?
-    sub_cost_rr_rrr(s); //sub the actual cost depending of if we need to do rr/rrr
-    cheapest = cheapest_move_cost(s);
-    printf("RESULTAT DE CHEAPEST : %zu\n", cheapest);
+    while(s->size_a != 3)
+    {
+        assign_target_a(s);
+        assign_cost_a(s); //maybe if else condition depending of if even or odd?
+        sub_cost_rr_rrr(s); //sub the actual cost depending of if we need to do rr/rrr
+        cheapest = cheapest_move_cost(s);
+        printf("RESULTAT DE CHEAPEST : %zu\n", cheapest);
+        move_at_top_then_push(s, cheapest);
+        //remettre a 0 les rr rrr etc etc :>
+        after_debug(s);
+    }
+
 }
 
 void step_one (t_stacks *s)

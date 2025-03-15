@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/15 12:15:40 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/15 12:23:33 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int     error_duplicate_checker(int *array_a, int size_array_a);
 int     error_message          (int code, t_stacks *stacks);
 void    free_struct            (t_stacks *s);
 void    init_stacks            (size_t size_stack_a, t_stacks *stacks, int *stack_a);
+void    move_at_top_then_push  (t_stacks *s, size_t cheapest);
 void    push_a                 (t_stacks *s);
 void    push_b                 (t_stacks *s);
 void    reverse_rotate_a       (t_stacks *s, int index_max);
