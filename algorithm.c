@@ -21,12 +21,16 @@ void assign_cost_a(t_stacks *s)
     i = 0;
     while (i <= s->size_a / 2) // ok
     {
-        if (s->target_a[i] <= s->size_b / 2)
+        if (s->target_a[i] <= s->size_b / 2 || s->target_a[i] <= i)
         {
             s->move_cost[i] = i + s->target_a[i];
             printf("VALEUR DE MOVE_COST A %d \n", s->move_cost[i]);
             //i++;
         }
+        // else if (())
+        // {
+        //     s->move_cost[i] = i + s->target_a[i];
+        // }
         else
         {
             s->move_cost[i] =  i + (s->size_b - s->target_a[i]);//s->size_a - s->size_b - s->target_a[i];//s->target_a[i] - 1;
@@ -76,8 +80,7 @@ void sub_cost_rr_rrr(t_stacks *s)
     unsigned long i;
     size_t counter_a;
     size_t counter_b;
-    counter_a = s->size_a;
-    counter_b = s->size_b;
+
     i = 1;
     while (i <= s->size_a / 2)
     {
@@ -87,6 +90,18 @@ void sub_cost_rr_rrr(t_stacks *s)
             counter_b = s->target_a[i];
             printf("test");
             while (counter_a != 0 && counter_b != 0)
+            {
+                s->move_cost[i] -= 1;
+                s->rr[i] += 1;
+                counter_a--;
+                counter_b--;
+            }
+        }
+        else if (s->target_a[i] <= i) //additionnal condition to handle rare case when b is too smoll maybe I will have to do it when it come to a too?
+        {
+            counter_a = i;
+            counter_b = s->target_a[i];
+            while(counter_a != 0 && counter_b != 0)
             {
                 s->move_cost[i] -= 1;
                 s->rr[i] += 1;
@@ -154,7 +169,8 @@ void step_one (t_stacks *s)
     {
         push_b(s);
         push_b(s);
-        //push_b(s);
+        push_b(s);
+        push_b(s);
         step_two(s);
     }
 }
