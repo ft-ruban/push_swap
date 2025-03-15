@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/14 10:27:42 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/15 12:15:40 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int     steps_push_swap        (t_stacks *stacks);
 void    sub_cost_rr_rrr        (t_stacks *s);
 void    swap_a                 (t_stacks *s);
 void    swap_b                 (t_stacks *s);
-
+size_t  cheapest_move_cost     (t_stacks *s);
 void    before_debug           (t_stacks *s);
 void    after_debug            (t_stacks *s);
 void    debug_assign_target    (t_stacks *s);
