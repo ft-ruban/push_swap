@@ -36,16 +36,24 @@ void rotate_b(t_stacks *s, int index_max)
     int     i;
     int     j;
 
-    i = 0;
+    i = 1;
     j = 0;
 
-    while (++i <= index_max)
-        buff[j++] = s->array_b[i];
+    while (i < index_max)
+    {
+        buff[j] = s->array_b[i];
+        i++;
+        j++;
+    }
     buff[j] = s->array_b[0];
     i = 0;
-    j = -1;
-    while (++j <= index_max)
-        s->array_b[j] = buff[i++];
+    j = 0;
+    while (j <= index_max)
+    {
+        s->array_b[j] = buff[i];
+        i++;
+        j++;
+    }
     ft_printf("rb\n");
 }
 void rotate_ab(t_stacks *s, int index_max)

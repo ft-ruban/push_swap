@@ -64,7 +64,7 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
     }
     else if (counter_a > s->size_a / 2 && counter_a != s->size_a + 1)
     {
-        while(counter_a != s->size_a + 1)
+        while(counter_a != s->size_a /*+ 1*/)
         {
             reverse_rotate_a(s, s->size_a);
             counter_a++;
@@ -78,9 +78,9 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
             counter_b--;
         }
     }
-    else if (counter_b > s->size_b / 2 && counter_b != s-> size_b + 1)
+    else if (counter_b > s->size_b / 2 && counter_b != s-> size_b + 1) //not sure about the half part of the condition
     {
-        while(counter_b != s->size_b + 1)
+        while(counter_b != s->size_b /*+ 1*/)
         {
             reverse_rotate_b(s, s->size_b);
             counter_b++;
@@ -108,6 +108,19 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
     // }
 }
 
+void rr_rrr_reset(t_stacks *s)
+{
+    size_t i;
+
+    i = 0;
+    while (i <= s->size_a)
+    {
+        s->rr[i] = 0;
+        s->rrr[i] = 0;
+        i++;
+    }
+}
+
 void step_two (t_stacks *s)
 {
     size_t cheapest;
@@ -121,6 +134,7 @@ void step_two (t_stacks *s)
         cheapest = cheapest_move_cost(s);
         printf("RESULTAT DE CHEAPEST : %zu\n", cheapest);
         move_at_top_then_push(s, cheapest);
+        rr_rrr_reset(s);
         //remettre a 0 les rr rrr etc etc :>
         after_debug(s);
     }
