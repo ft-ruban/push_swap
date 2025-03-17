@@ -1,18 +1,6 @@
 #include "header/push_swap.h"
 
-// typedef struct s_stacks
-// {
-//     size_t     size_a;
-//     size_t     size_b;
-//     int        *array_a;
-//     int        *array_b;
-//     size_t     *target_a;
-//     size_t     *target_b;
-//     int        *move_cost;
-//     int        *rr;
-//     int        *rrr;
-//     //int        median;
-// } t_stacks;
+
  
 
  size_t cheapest_move_cost(t_stacks *s)
@@ -107,8 +95,66 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
     //     }
     // }
 }
+// typedef struct s_stacks
+// {
+//     size_t     size_a;
+//     size_t     size_b;
+//     int        *array_a;
+//     int        *array_b;
+//     size_t     *target_a;
+//     size_t     *target_b;
+//     int        *move_cost;
+//     int        *rr;
+//     int        *rrr;
+//     //int        median;
+// } t_stacks;
 
+void find_target_a(t_stacks *s)
+{
+    int i;
+    int min_coordinate;
+    int target;
 
+    printf("je passe ici");
+    target = 0;
+    min_coordinate = 0;
+    i = 0;
+    while (i < (int)s->size_a)
+    {
+        if (s->array_a[i] > s->array_b[0])
+        {
+            target = 1;
+            s->target_b[0] = i;
+            while (i < (int)s->size_a)
+            {
+                if (s->array_a[i] > s->array_a[s->target_b[0]])
+                {
+                    s->target_b[0] = i;
+                }
+                i++;
+            }
+        }
+        else
+        {
+            if(s->array_a[min_coordinate] > s->array_a[i])
+                min_coordinate = i;
+        }
+        i++;
+    }
+    if ((target == 0))
+        s->target_b[0] = min_coordinate;
+}
+void step_three(t_stacks *s)
+{
+    //size_t cheapest;
+    find_target_a(s);
+    printf(" target_b 0 = %zu", s->target_b[0]);
+
+    // while(s->size_b != 0);
+    // {
+        
+    // }
+}
 
 void step_two (t_stacks *s)
 {
@@ -129,7 +175,8 @@ void step_two (t_stacks *s)
         after_debug(s);
     }
     sort_three(s);
-    //after_debug(s);
+    after_debug(s);
+    step_three(s);
 }
 
 void step_one (t_stacks *s)
