@@ -20,7 +20,7 @@ void rotate_a(t_stacks *s, int index_max)
     i = 0;
     j = 0;
 
-    while (++i <= index_max)
+    while (++i < index_max)
         buff[j++] = s->array_a[i];
     buff[j] = s->array_a[0];
     i = 0;
@@ -36,26 +36,45 @@ void rotate_b(t_stacks *s, int index_max)
     int     i;
     int     j;
 
-    i = 1;
-    j = 0;
-
-    while (i < index_max)
-    {
-        buff[j] = s->array_b[i];
-        i++;
-        j++;
-    }
-    buff[j] = s->array_b[0];
     i = 0;
     j = 0;
-    while (j <= index_max)
-    {
-        s->array_b[j] = buff[i];
-        i++;
-        j++;
-    }
+
+    while (++i < index_max)
+        buff[j++] = s->array_b[i];
+    buff[j] = s->array_b[0];
+    i = 0;
+    j = -1;
+    while (++j <= index_max)
+        s->array_b[j] = buff[i++];
     ft_printf("rb\n");
 }
+
+// void rotate_b(t_stacks *s, int index_max)
+// {
+//     int     buff[index_max];
+//     int     i;
+//     int     j;
+
+//     i = 1;
+//     j = 0;
+
+//     while (i < index_max)
+//     {
+//         buff[j] = s->array_b[i];
+//         i++;
+//         j++;
+//     }
+//     buff[j] = s->array_b[0];
+//     i = 0;
+//     j = 0;
+//     while (j <= index_max)
+//     {
+//         s->array_b[j] = buff[i];
+//         i++;
+//         j++;
+//     }
+//     ft_printf("rb\n");
+// }
 void rotate_ab(t_stacks *s, int index_max)
 {
     int     buff[index_max];
@@ -65,7 +84,7 @@ void rotate_ab(t_stacks *s, int index_max)
     i = 0;
     j = 0;
 
-    while (++i <= index_max)
+    while (++i < index_max)
         buff[j++] = s->array_a[i];
     buff[j] = s->array_a[0];
     i = 0;

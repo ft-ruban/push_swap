@@ -108,18 +108,7 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
     // }
 }
 
-void rr_rrr_reset(t_stacks *s)
-{
-    size_t i;
 
-    i = 0;
-    while (i <= s->size_a)
-    {
-        s->rr[i] = 0;
-        s->rrr[i] = 0;
-        i++;
-    }
-}
 
 void step_two (t_stacks *s)
 {
@@ -135,6 +124,7 @@ void step_two (t_stacks *s)
         printf("RESULTAT DE CHEAPEST : %zu\n", cheapest);
         move_at_top_then_push(s, cheapest);
         rr_rrr_reset(s);
+        target_reset(s);
         //remettre a 0 les rr rrr etc etc :>
         after_debug(s);
     }

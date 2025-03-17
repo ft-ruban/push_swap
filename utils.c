@@ -46,3 +46,27 @@ void free_struct(t_stacks *s)
         free(s->rrr);
     error_message(13, s);
 }
+void rr_rrr_reset(t_stacks *s)
+{
+    size_t i;
+
+    i = 0;
+    while (i <= s->size_a)
+    {
+        s->rr[i] = 0;
+        s->rrr[i] = 0;
+        i++;
+    }
+}
+
+void target_reset(t_stacks *s)
+{
+    size_t i;
+
+    i = 0;
+    while (i <= s->size_a)
+    {
+        s->target_a[i] = 0;
+        i++;
+    }
+}
