@@ -171,10 +171,28 @@ void move_at_top_b_then_push(t_stacks *s)
     printf("\n\nVALEUR DE ARRAY_A %u\n",s->array_a[0]);
     push_a(s);
 }
+size_t cheapest_number(t_stacks *s)
+{
+    size_t i;
+    size_t result;
 
+    result = 0;
+    i = 0;
+    while (i <= s->size_a)
+    {
+        if (s->array_a[result] > s->array_a[i])
+        {
+            result = i;
+        }
+        i++;
+    }
+    return (result);
+}
 void step_three(t_stacks *s)
 {
-    //size_t cheapest;
+    size_t cheapest;
+
+    
     while(s->size_b != 0)
     {
         find_target_a(s);
@@ -182,6 +200,24 @@ void step_three(t_stacks *s)
         move_at_top_b_then_push(s);
         after_debug(s);
         s->target_b[0] = 0;
+    }
+    cheapest = cheapest_number(s);
+    printf("cheapest : %zu\n",cheapest);
+    if (cheapest <= s->size_a / 2)
+    {
+        while (cheapest != 0)
+        {
+            rotate_a(s, s->size_a);
+            cheapest--;
+        }
+    }
+    else
+    {
+        while (cheapest != s->size_a)
+        {
+            reverse_rotate_a(s, s->size_a);
+            cheapest++;
+        }
     }
 }
 
