@@ -128,7 +128,8 @@ void step_two (t_stacks *s)
         //remettre a 0 les rr rrr etc etc :>
         after_debug(s);
     }
-
+    sort_three(s);
+    //after_debug(s);
 }
 
 void step_one (t_stacks *s)
