@@ -127,7 +127,7 @@ void find_target_a(t_stacks *s)
             s->target_b[0] = i;
             while (i < (int)s->size_a)
             {
-                if (s->array_a[i] > s->array_a[s->target_b[0]])
+                if ((s->array_a[i] < s->array_a[s->target_b[0]]) && (s->array_a[i] > s->array_b[0]))
                 {
                     s->target_b[0] = i;
                 }
@@ -144,16 +144,45 @@ void find_target_a(t_stacks *s)
     if ((target == 0))
         s->target_b[0] = min_coordinate;
 }
+
+void move_at_top_b_then_push(t_stacks *s)
+{
+    size_t counter_a;
+    //size_t counter_b;
+
+    counter_a = s->target_b[0];
+
+    if (counter_a <= s->size_a / 2 && counter_a != 0)
+    {
+        while (counter_a != 0)
+        {
+           rotate_a(s, s->size_a);
+           counter_a--;
+        }
+    }
+    else if (counter_a > s->size_a / 2 && counter_a != s->size_a + 1)
+    {
+        while(counter_a != s->size_a /*+ 1*/)
+        {
+            reverse_rotate_a(s, s->size_a);
+            counter_a++;
+        }
+    }
+    printf("\n\nVALEUR DE ARRAY_A %u\n",s->array_a[0]);
+    push_a(s);
+}
+
 void step_three(t_stacks *s)
 {
     //size_t cheapest;
-    find_target_a(s);
-    printf(" target_b 0 = %zu", s->target_b[0]);
-
-    // while(s->size_b != 0);
-    // {
-        
-    // }
+    while(s->size_b != 0)
+    {
+        find_target_a(s);
+        printf(" target_b 0 = %zu", s->target_b[0]);
+        move_at_top_b_then_push(s);
+        after_debug(s);
+        s->target_b[0] = 0;
+    }
 }
 
 void step_two (t_stacks *s)

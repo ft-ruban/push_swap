@@ -23,27 +23,30 @@ rrr : rra and rrb at the same time.*/
 void push_a(t_stacks *s)
 {
     int buff_target;
+    //char buff_b[s->size_b];
     //int buff_sort;
     size_t i;
 
+    s->size_a++; 
     buff_target = s->array_b[0];
     i = 0;
-    while (i < s->size_a - 1) //unsure about the logic here bleh
+    while (i < s->size_b - 1) //unsure about the logic here bleh
     {
         s->array_b[i] = s->array_b[i+1];
         i++;
     }
     s->array_b[i] = 0;
-    //buff_sort = s->array_a[0];
-    
-    //s->array_a[1] = buff_sort;
+    //buff_sort = s->array_b[0];
+    s->array_a[s->size_a] = s->array_a[s->size_a-1];
+    i = s->size_a - 1;
     while (i != 0) //unsure about the logic here bleh
     {
         s->array_a[i] = s->array_a[i-1];
         i--;
+        //printf("I = %zu\narray_b[%zu] %d\narray_b[%zu] %d\n", i, i - 1, s->array_b[i-1], i, s->array_b[i]);
     }
     s->array_a[0] = buff_target;
-    s->size_a++;
+    //s->size_a++;
     s->size_b--; 
     ft_printf("pa\n");
 }
