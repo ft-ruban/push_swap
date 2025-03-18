@@ -1,9 +1,6 @@
 #include "header/push_swap.h"
 
-
- 
-
- size_t cheapest_move_cost(t_stacks *s)
+size_t cheapest_move_cost(t_stacks *s)
  {
     size_t i;
     size_t result;
@@ -115,7 +112,7 @@ void find_target_a(t_stacks *s)
     size_t min_coordinate;
     size_t target;
 
-    printf("je passe ici");
+    //printf("je passe ici");
     target = 0;
     min_coordinate = 0;
     i = 0;
@@ -196,13 +193,13 @@ void step_three(t_stacks *s)
     while(s->size_b != 0)
     {
         find_target_a(s);
-        printf(" target_b 0 = %zu", s->target_b[0]);
+        //printf(" target_b 0 = %zu", s->target_b[0]);
         move_at_top_b_then_push(s);
         after_debug(s);
         s->target_b[0] = 0;
     }
     cheapest = cheapest_number(s);
-    printf("cheapest : %zu\n",cheapest);
+    //printf("cheapest : %zu\n",cheapest);
     if (cheapest <= s->size_a / 2)
     {
         while (cheapest != 0)
@@ -232,12 +229,11 @@ void step_two (t_stacks *s)
         assign_cost_a(s); //maybe if else condition depending of if even or odd?
         sub_cost_rr_rrr(s); //sub the actual cost depending of if we need to do rr/rrr
         cheapest = cheapest_move_cost(s);
-        printf("RESULTAT DE CHEAPEST : %zu\n", cheapest);
+        //printf("RESULTAT DE CHEAPEST : %zu\n", cheapest);
         move_at_top_then_push(s, cheapest);
         rr_rrr_reset(s);
         target_reset(s);
-        //remettre a 0 les rr rrr etc etc :>
-        after_debug(s);
+        //after_debug(s);
     }
     sort_three(s);
     after_debug(s);
@@ -280,5 +276,6 @@ int steps_push_swap(t_stacks *stacks)
     step_one(stacks);
     after_debug(stacks);
     free_struct(stacks);
+    exit(0);
     return (1);
 }

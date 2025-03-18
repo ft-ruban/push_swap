@@ -30,9 +30,9 @@ void rotate_a(t_stacks *s, int index_max)
     ft_printf("ra\n");
 }
 
-void rotate_b(t_stacks *s, int index_max)
+void rotate_b(t_stacks *s)
 {
-    printf("%d\n",index_max );
+    //printf("%d\n",index_max );
     int     buff[s->size_b];
     size_t     i;
     size_t     j;

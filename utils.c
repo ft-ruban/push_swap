@@ -44,6 +44,9 @@ void free_struct(t_stacks *s)
         free(s->rr);
     if (s->rrr)
         free(s->rrr);
+    if(s)
+        free (s);
+    exit(0);
     error_message(13, s);
 }
 void rr_rrr_reset(t_stacks *s)

@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
     t_stacks     *stacks;
 
-    printf("argc = %d\n", argc);
+    //printf("argc = %d\n", argc);
     stacks = ft_calloc(1, sizeof(t_stacks));
     if (!stacks)
         return (error_message(MALLOC_ERROR, stacks));
