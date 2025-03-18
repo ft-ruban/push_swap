@@ -111,21 +111,21 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
 
 void find_target_a(t_stacks *s)
 {
-    int i;
-    int min_coordinate;
-    int target;
+    size_t i;
+    size_t min_coordinate;
+    size_t target;
 
     printf("je passe ici");
     target = 0;
     min_coordinate = 0;
     i = 0;
-    while (i < (int)s->size_a)
+    while (i <= s->size_a)
     {
         if (s->array_a[i] > s->array_b[0])
         {
             target = 1;
             s->target_b[0] = i;
-            while (i < (int)s->size_a)
+            while (i <= s->size_a)
             {
                 if ((s->array_a[i] < s->array_a[s->target_b[0]]) && (s->array_a[i] > s->array_b[0]))
                 {
@@ -168,7 +168,7 @@ void move_at_top_b_then_push(t_stacks *s)
             counter_a++;
         }
     }
-    printf("\n\nVALEUR DE ARRAY_A %u\n",s->array_a[0]);
+    //printf("\n\nVALEUR DE ARRAY_A %u\n",s->array_a[0]);
     push_a(s);
 }
 size_t cheapest_number(t_stacks *s)

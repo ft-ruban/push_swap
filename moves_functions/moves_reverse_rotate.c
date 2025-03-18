@@ -65,6 +65,7 @@ void reverse_rotate_b(t_stacks *s, int index_max)
 void reverse_rotate_ab(t_stacks *s, int index_max)
 {
     int     buff[index_max];
+    int     buff_b[s->size_b];
     int     i;
     int     j;
 
@@ -90,19 +91,19 @@ void reverse_rotate_ab(t_stacks *s, int index_max)
     j = 0;
     while ((size_t)j </*=*/ s->size_b)
     {
-        buff[j] = s->array_b[i];
+        buff_b[j] = s->array_b[i];
         i++;
         j++;
     }
-    buff[j] = s->array_b[s->size_b - 1];
+    buff_b[j] = s->array_b[s->size_b - 1];
     i = 0;
     j = 1;
     while ((size_t)j <= s->size_b)
     {
-        s->array_b[j] = buff[i];
+        s->array_b[j] = buff_b[i];
         i++;
         j++;
     }
-    s->array_b[0] = buff[i];
+    s->array_b[0] = buff_b[i];
     ft_printf("rrr\n");
 }
