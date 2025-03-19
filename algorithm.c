@@ -59,7 +59,7 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
     {
         while (counter_b != 0)
         {
-            rotate_b(s, s->size_b);
+            rotate_b(s);
             counter_b--;
         }
     }
@@ -175,7 +175,7 @@ size_t cheapest_number(t_stacks *s)
 
     result = 0;
     i = 0;
-    while (i <= s->size_a)
+    while (i < s->size_a)
     {
         if (s->array_a[result] > s->array_a[i])
         {
@@ -204,6 +204,7 @@ void step_three(t_stacks *s)
     {
         while (cheapest != 0)
         {
+            printf("ici\n");
             rotate_a(s, s->size_a);
             cheapest--;
         }
@@ -278,4 +279,28 @@ int steps_push_swap(t_stacks *stacks)
     free_struct(stacks);
     exit(0);
     return (1);
-}
+}// void reverse_rotate_a(t_stacks *s, int index_max)
+// {
+//     int     buff[index_max];
+//     int     i;
+//     int     j;
+
+//     i = 0;
+//     j = 0;
+//     while (j </*=*/ index_max)
+//     {
+//         buff[j] = s->array_a[i];
+//         i++;
+//         j++;
+//     }
+//     buff[j] = s->array_a[index_max - 1];
+//     i = 0;
+//     j = 1;
+//     while (j <= index_max)
+//     {
+//         s->array_a[j] = buff[i];
+//         i++;
+//         j++;
+//     }
+//     s->array_a[0] = buff[i];
+//     ft_printf("rra\n");

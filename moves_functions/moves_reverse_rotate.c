@@ -12,30 +12,46 @@ rrr : rra and rrb at the same time.*/
 
 void reverse_rotate_a(t_stacks *s, int index_max)
 {
-    int     buff[index_max];
-    int     i;
-    int     j;
+    int buff;
+    int i;
 
-    i = 0;
-    j = 0;
-    while (j </*=*/ index_max)
+    buff = s->array_a[index_max - 1];  // Stocke le dernier élément
+    i = index_max - 1;
+    while (i != 0)  // Décalage des éléments vers la droite
     {
-        buff[j] = s->array_a[i];
-        i++;
-        j++;
+        s->array_a[i] = s->array_a[i - 1];
+        i--;
     }
-    buff[j] = s->array_a[index_max - 1];
-    i = 0;
-    j = 1;
-    while (j <= index_max)
-    {
-        s->array_a[j] = buff[i];
-        i++;
-        j++;
-    }
-    s->array_a[0] = buff[i];
+    s->array_a[0] = buff;  // Met le dernier élément en première position
     ft_printf("rra\n");
 }
+
+// void reverse_rotate_a(t_stacks *s, int index_max)
+// {
+//     int     buff[index_max];
+//     int     i;
+//     int     j;
+
+//     i = 0;
+//     j = 0;
+//     while (j </*=*/ index_max)
+//     {
+//         buff[j] = s->array_a[i];
+//         i++;
+//         j++;
+//     }
+//     buff[j] = s->array_a[index_max - 1];
+//     i = 0;
+//     j = 1;
+//     while (j <= index_max)
+//     {
+//         s->array_a[j] = buff[i];
+//         i++;
+//         j++;
+//     }
+//     s->array_a[0] = buff[i];
+//     ft_printf("rra\n");
+
 void reverse_rotate_b(t_stacks *s, int index_max)
 {
     int     buff[index_max];
