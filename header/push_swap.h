@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 16:16:05 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 16:33:43 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void    sub_cost_rrr                (t_stacks *s, size_t i, size_t counter_a, si
 void    swap_a                      (t_stacks *s);
 void    swap_b                      (t_stacks *s);
 void    target_reset                (t_stacks *s);
-void    find_target_a               (t_stacks *s);
+void    find_target_a               (t_stacks *s, size_t i, size_t min_coordinate, size_t target);
 size_t  cheapest_move_cost          (t_stacks *s);
 void    before_debug                (t_stacks *s);
 void    after_debug                 (t_stacks *s);

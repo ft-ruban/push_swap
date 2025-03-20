@@ -6,13 +6,13 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 15:19:36 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 15:43:33 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 16:48:59 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header/push_swap.h"
 
-void	move_top_push_b(t_stacks *s, size_t cheapest, size_t counter_b)
+void	move_top_push_b(t_stacks *s, size_t counter_b)
 {
 	if (counter_b <= s->size_b / 2 && counter_b != 0)
 	{
@@ -32,7 +32,7 @@ void	move_top_push_b(t_stacks *s, size_t cheapest, size_t counter_b)
 	}
 }
 
-void	move_top_push_a(t_stacks *s, size_t cheapest, size_t counter_a)
+void	move_top_push_a(t_stacks *s, size_t counter_a)
 {
 	if (counter_a <= s->size_a / 2 && counter_a != 0)
 	{
@@ -74,8 +74,8 @@ void	move_at_top_then_push(t_stacks *s, size_t cheapest)
 		counter_b++;
 	}
 	if (counter_a != 0 && counter_a != s->size_a + 1)
-		move_top_push_a(s, cheapest, counter_a);
+		move_top_push_a(s, counter_a);
 	if (counter_b != 0 && counter_b != s->size_b + 1)
-		move_top_push_b(s, cheapest, counter_b);
+		move_top_push_b(s, counter_b);
 	push_b(s);
 }

@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:08:28 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 16:04:21 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 16:48:38 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	step_three(t_stacks *s)
 
 	while (s->size_b != 0)
 	{
-		find_target_a(s);
+		find_target_a(s, 0, 0, 0);
 		move_at_top_b_then_push(s);
 	}
 	cheapest = cheapest_number(s);
@@ -39,6 +39,7 @@ void	step_three(t_stacks *s)
 		}
 	}
 }
+// to RM DEBUG before push
 
 void	step_two(t_stacks *s)
 {
@@ -82,7 +83,7 @@ void	step_one(t_stacks *s)
 	}
 }
 
-//TODO check if at some point it can fail
+// TODO check if at some point it can fail
 int	steps_push_swap(t_stacks *stacks)
 {
 	before_debug(stacks);

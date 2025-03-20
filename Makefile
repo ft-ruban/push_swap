@@ -6,7 +6,7 @@
 #    By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:21:37 by ldevoude          #+#    #+#              #
-#    Updated: 2025/03/20 14:55:36 by ldevoude         ###   ########lyon.fr    #
+#    Updated: 2025/03/20 16:46:17 by ldevoude         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,21 +67,21 @@ RED            =   \033[1;31m
 #####################################################
 PUSH_SWAP_SRC    =   $(addsuffix .c, \
 						main \
-						algorithm \
 						cost_move \
 						debug \
 						error \
-						sort_utils \
+						move_top_push\
 						steps \
+						utils_misc\
 						utils_rr_rrr \
-						utils)
+						utils_sort \
+						utils_step_three)
 
 PUSH_SWAP_MOVES_SRC = $(addsuffix .c, \
 						moves_between_arrays \
 						moves_push \
 						moves_reverse_rotate \
-						moves_rotate \
-						moves_rotate_old)
+						moves_rotate)
 						
 LIBFTX_SRC     =   $(addsuffix .c, \
 						ft_argv_to_int_array\
