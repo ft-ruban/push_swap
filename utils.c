@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:01:32 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 15:17:55 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 16:27:45 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,20 @@ void	target_reset(t_stacks *s)
 	}
 }
 
-size_t cheapest_number(t_stacks *s)
+size_t	cheapest_number(t_stacks *s)
 {
-    size_t i;
-    size_t result;
+	size_t	i;
+	size_t	result;
 
-    result = 0;
-    i = 0;
-    while (i < s->size_a)
-    {
-        if (s->array_a[result] > s->array_a[i])
-        {
-            result = i;
-        }
-        i++;
-    }
-    return (result);
+	result = 0;
+	i = 0;
+	while (i < s->size_a)
+	{
+		if (s->array_a[result] > s->array_a[i])
+		{
+			result = i;
+		}
+		i++;
+	}
+	return (result);
 }
