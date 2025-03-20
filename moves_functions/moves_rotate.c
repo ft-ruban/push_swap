@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:52:29 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 17:12:12 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 17:51:56 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	rotate_a(t_stacks *s, int index_max)
 
 void	rotate_b(t_stacks *s)
 {
-	int	buff;
+	int		buff;
 	size_t	i;
 
 	buff = s->array_b[0];
@@ -46,7 +46,7 @@ void	rotate_b(t_stacks *s)
 
 void	rotate_ab(t_stacks *s, size_t index_max)
 {
-	int	buff;
+	int		buff;
 	size_t	i;
 
 	buff = s->array_a[0];

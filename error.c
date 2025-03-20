@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:58:58 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 13:59:11 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 18:00:06 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	error_message(int code, t_stacks *stacks)
 {
 	if (stacks)
 		free(stacks);
-	ft_printfd("ERROR\n");
+	ft_printfd("ERROR%d\n",code);
 	exit(code);
 }
 

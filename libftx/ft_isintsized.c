@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isintsized.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/20 17:48:33 by ldevoude          #+#    #+#             */
+/*   Updated: 2025/03/20 17:48:47 by ldevoude         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-// update .h + makefile
+
 static int	convert_ascii_to_int(int i, const char *nptr, int negative)
 {
 	long	result;
@@ -14,10 +26,10 @@ static int	convert_ascii_to_int(int i, const char *nptr, int negative)
 	}
 	if (negative == TRUE)
 		result *= -1;
-    if(result > 2147483647 || result < -2147483648)
-        return (1);
-    else 
-        return (0);
+	if (result > 2147483647 || result < -2147483648)
+		return (1);
+	else
+		return (0);
 }
 
 int	ft_isintsized(const char *nptr)
