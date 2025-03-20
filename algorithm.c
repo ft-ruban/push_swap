@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:16:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 14:17:06 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 14:53:19 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,20 +88,6 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
     push_b(s);
 }
 
-// typedef struct s_stacks
-// {
-//     size_t     size_a;
-//     size_t     size_b;
-//     int        *array_a;
-//     int        *array_b;
-//     size_t     *target_a;
-//     size_t     *target_b;
-//     int        *move_cost;
-//     int        *rr;
-//     int        *rrr;
-//     //int        median;
-// } t_stacks;
-
 void find_target_a(t_stacks *s)
 {
     size_t i;
@@ -141,7 +127,6 @@ void find_target_a(t_stacks *s)
 void move_at_top_b_then_push(t_stacks *s)
 {
     size_t counter_a;
-    //size_t counter_b;
 
     counter_a = s->target_b[0];
 
