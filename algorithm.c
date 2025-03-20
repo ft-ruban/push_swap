@@ -6,28 +6,11 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:16:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 14:53:19 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 15:32:52 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header/push_swap.h"
-
-size_t cheapest_move_cost(t_stacks *s)
- {
-    size_t i;
-    size_t result;
-
-    i = 1;
-    result = 0;
-    while (i < s->size_a)
-    {
-        if (s->move_cost[i] < s->move_cost[result])
-            result = i;
-        i++;
-    }
-    return (result);
- }
-
  
 void move_at_top_then_push (t_stacks *s, size_t cheapest)
 {
@@ -40,7 +23,6 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
     {
         rotate_ab(s, s->size_a);
         s->rr[cheapest] -= 1;
-        //cheapest--;
         counter_a--;
         counter_b--;
     }
@@ -48,7 +30,6 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
     {
         reverse_rotate_ab(s, s->size_a);
         s->rrr[cheapest] -= 1;
-        //cheapest++;
         counter_a++;
         counter_b++;
     }
@@ -148,21 +129,4 @@ void move_at_top_b_then_push(t_stacks *s)
     }
     s->target_b[0] = 0;
     push_a(s);
-}
-size_t cheapest_number(t_stacks *s)
-{
-    size_t i;
-    size_t result;
-
-    result = 0;
-    i = 0;
-    while (i < s->size_a)
-    {
-        if (s->array_a[result] > s->array_a[i])
-        {
-            result = i;
-        }
-        i++;
-    }
-    return (result);
 }

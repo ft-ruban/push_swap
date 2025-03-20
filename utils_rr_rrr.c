@@ -6,11 +6,24 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:52:03 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 15:12:30 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 15:15:40 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header/push_swap.h"
+
+void	rr_rrr_reset(t_stacks *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (i <= s->size_a)
+	{
+		s->rr[i] = 0;
+		s->rrr[i] = 0;
+		i++;
+	}
+}
 
 void	sub_cost_rrr(t_stacks *s, size_t i, size_t counter_a, size_t counter_b)
 {

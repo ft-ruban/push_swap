@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:01:32 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 14:01:53 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 15:17:55 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,19 +62,6 @@ void	free_struct(t_stacks *s)
 	error_message(13, s);
 }
 
-void	rr_rrr_reset(t_stacks *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (i <= s->size_a)
-	{
-		s->rr[i] = 0;
-		s->rrr[i] = 0;
-		i++;
-	}
-}
-
 void	target_reset(t_stacks *s)
 {
 	size_t	i;
@@ -85,4 +72,22 @@ void	target_reset(t_stacks *s)
 		s->target_a[i] = 0;
 		i++;
 	}
+}
+
+size_t cheapest_number(t_stacks *s)
+{
+    size_t i;
+    size_t result;
+
+    result = 0;
+    i = 0;
+    while (i < s->size_a)
+    {
+        if (s->array_a[result] > s->array_a[i])
+        {
+            result = i;
+        }
+        i++;
+    }
+    return (result);
 }

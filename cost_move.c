@@ -1,6 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cost_move.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/20 15:16:29 by ldevoude          #+#    #+#             */
+/*   Updated: 2025/03/20 15:16:29 by ldevoude         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header/push_swap.h"
 
-//TODO make those functions lighter and check for ways to improve them.
+size_t cheapest_move_cost(t_stacks *s)
+ {
+    size_t i;
+    size_t result;
+
+    i = 1;
+    result = 0;
+    while (i < s->size_a)
+    {
+        if (s->move_cost[i] < s->move_cost[result])
+            result = i;
+        i++;
+    }
+    return (result);
+ }
 
 size_t assign_cost_a_first_half(t_stacks *s, size_t i)
 {
