@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/20 14:16:45 by ldevoude          #+#    #+#             */
+/*   Updated: 2025/03/20 14:17:06 by ldevoude         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header/push_swap.h"
 
 size_t cheapest_move_cost(t_stacks *s)
@@ -15,6 +27,8 @@ size_t cheapest_move_cost(t_stacks *s)
     }
     return (result);
  }
+
+ 
 void move_at_top_then_push (t_stacks *s, size_t cheapest)
 {
     size_t counter_a;
@@ -72,26 +86,8 @@ void move_at_top_then_push (t_stacks *s, size_t cheapest)
         }
     }
     push_b(s);
-    // while(counter_a != 0 && counter_a < s->size_a && counter_b < s->size_b && counter_b != 0 )
-    // {
-        
-    //     if (counter_a != 0)
-    //     {
-    //         if (counter_a <= s->size_a / 2)
-    //             {
-    //                 while (counter_a != 0)
-    //                 {
-    //                    rotate_a(s, s->size_a);
-    //                    counter_a--;
-    //                 }
-    //             }
-    //         else
-    //             {
-    //                 while (counter_a != size_)
-    //             }
-    //     }
-    // }
 }
+
 // typedef struct s_stacks
 // {
 //     size_t     size_a;
@@ -165,7 +161,7 @@ void move_at_top_b_then_push(t_stacks *s)
             counter_a++;
         }
     }
-    //printf("\n\nVALEUR DE ARRAY_A %u\n",s->array_a[0]);
+    s->target_b[0] = 0;
     push_a(s);
 }
 size_t cheapest_number(t_stacks *s)
@@ -185,122 +181,3 @@ size_t cheapest_number(t_stacks *s)
     }
     return (result);
 }
-void step_three(t_stacks *s)
-{
-    size_t cheapest;
-
-    
-    while(s->size_b != 0)
-    {
-        find_target_a(s);
-        //printf(" target_b 0 = %zu", s->target_b[0]);
-        move_at_top_b_then_push(s);
-        after_debug(s);
-        s->target_b[0] = 0;
-    }
-    cheapest = cheapest_number(s);
-    //printf("cheapest : %zu\n",cheapest);
-    if (cheapest <= s->size_a / 2)
-    {
-        while (cheapest != 0)
-        {
-            printf("ici\n");
-            rotate_a(s, s->size_a);
-            cheapest--;
-        }
-    }
-    else
-    {
-        while (cheapest != s->size_a)
-        {
-            reverse_rotate_a(s, s->size_a);
-            cheapest++;
-        }
-    }
-}
-
-void step_two (t_stacks *s)
-{
-    size_t cheapest;
-    //TODO while loop until size_a == 3
-    //also a function that will reset the targets maybe
-    while(s->size_a != 3)
-    {
-        assign_target_a(s);
-        assign_cost_a(s); //maybe if else condition depending of if even or odd?
-        sub_cost_rr_rrr(s); //sub the actual cost depending of if we need to do rr/rrr
-        cheapest = cheapest_move_cost(s);
-        //printf("RESULTAT DE CHEAPEST : %zu\n", cheapest);
-        move_at_top_then_push(s, cheapest);
-        rr_rrr_reset(s);
-        target_reset(s);
-        //after_debug(s);
-    }
-    sort_three(s);
-    after_debug(s);
-    step_three(s);
-}
-
-void step_one (t_stacks *s)
-{
-    if(s->size_a == 2)
-    {  
-        if (s->array_a[0] > s->array_a[1])
-            swap_a(s);
-        exit(0);
-    }
-    else if(s->size_a == 3)
-        sort_three(s);
-    else if(s->size_a == 4)
-    {
-        push_b(s);
-        sort_three(s);
-        //TODO function to handle that specific case
-    }
-    else
-    {
-        // push_b(s);
-        // push_b(s);
-        // push_b(s);
-        // push_b(s);
-        //  push_b(s);
-        //  push_b(s);
-        push_b(s);
-        push_b(s);
-        step_two(s);
-    }
-}
-
-int steps_push_swap(t_stacks *stacks)
-{
-    before_debug(stacks);
-    step_one(stacks);
-    after_debug(stacks);
-    free_struct(stacks);
-    exit(0);
-    return (1);
-}// void reverse_rotate_a(t_stacks *s, int index_max)
-// {
-//     int     buff[index_max];
-//     int     i;
-//     int     j;
-
-//     i = 0;
-//     j = 0;
-//     while (j </*=*/ index_max)
-//     {
-//         buff[j] = s->array_a[i];
-//         i++;
-//         j++;
-//     }
-//     buff[j] = s->array_a[index_max - 1];
-//     i = 0;
-//     j = 1;
-//     while (j <= index_max)
-//     {
-//         s->array_a[j] = buff[i];
-//         i++;
-//         j++;
-//     }
-//     s->array_a[0] = buff[i];
-//     ft_printf("rra\n");

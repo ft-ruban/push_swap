@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/18 12:04:34 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 14:17:59 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int     main                   (int argc, char *argv[]);
 void    assign_cost_a          (t_stacks *s);
 void    assign_target_a        (t_stacks *s);
 size_t  biggest_number_array   (t_stacks *s);
+size_t  cheapest_number        (t_stacks *s);
 int     error_bigger_than_int  (char *argv[]);
 int     error_checker          (char *argv[], int argc, t_stacks *stacks);
 int     error_checker_is_digit (char *argv[]);
@@ -50,6 +51,7 @@ int     error_message          (int code, t_stacks *stacks);
 void    free_struct            (t_stacks *s);
 void    init_stacks            (size_t size_stack_a, t_stacks *stacks, int *stack_a);
 void    move_at_top_then_push  (t_stacks *s, size_t cheapest);
+void    move_at_top_b_then_push(t_stacks *s);
 void    push_a                 (t_stacks *s);
 void    push_b                 (t_stacks *s);
 void    reverse_rotate_a       (t_stacks *s, int index_max);
