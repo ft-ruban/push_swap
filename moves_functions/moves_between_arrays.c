@@ -1,47 +1,46 @@
-/*sa (swap a): Swap the first 2 elements at the top of stack a.
-Do nothing if there is only one or no elements.
-sb (swap b): Swap the first 2 elements at the top of stack b.
-Do nothing if there is only one or no elements.
-ss : sa and sb at the same time.*/
-
-// 5 4 9 1 2 3
-// 4 5 9 1 2 3
-//TOKNOW YOU CAN PLACE JUST WHAT YOU NEED FROM STRUCT INSIDE PARAMETERS (stonk)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves_between_arrays.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/20 13:45:44 by ldevoude          #+#    #+#             */
+/*   Updated: 2025/03/20 13:46:52 by ldevoude         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-void swap_a (t_stacks *s)
+void	swap_a(t_stacks *s)
 {
-    //TODO nothing if there is only one or no elements.
-    int buff;
+	int	buff;
 
-    buff = s->array_a[0];
-    s->array_a[0] = s->array_a[1];
-    s->array_a[1] = buff;
-    ft_printf("sa\n");
+	buff = s->array_a[0];
+	s->array_a[0] = s->array_a[1];
+	s->array_a[1] = buff;
+	ft_printf("sa\n");
 }
 
-void swap_b (t_stacks *s)
+void	swap_b(t_stacks *s)
 {
-    //TODO nothing if there is only one or no elements.
-    int buff;
+	int	buff;
 
-    buff = s->array_b[0];
-    s->array_b[0] = s->array_b[1]; 
-    s->array_b[1] = buff;
-    ft_printf("sb\n");
+	buff = s->array_b[0];
+	s->array_b[0] = s->array_b[1];
+	s->array_b[1] = buff;
+	ft_printf("sb\n");
 }
 
-void swap_ab (t_stacks *s)
+void	swap_ab(t_stacks *s)
 {
-    //TODO nothing if there is only one or no elements.
-    int buff;
+	int	buff;
 
-    buff = s-> array_b[0];
-    s->array_b[0] = s->array_b[1]; 
-    s->array_b[1] = buff;
-    buff = s->array_a[0];
-    s->array_a[0] = s->array_a[1]; 
-    s->array_a[1] = buff;
-    ft_printf("ss\n");
+	buff = s->array_b[0];
+	s->array_b[0] = s->array_b[1];
+	s->array_b[1] = buff;
+	buff = s->array_a[0];
+	s->array_a[0] = s->array_a[1];
+	s->array_a[1] = buff;
+	ft_printf("ss\n");
 }
