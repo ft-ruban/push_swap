@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:48:45 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 15:12:20 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 16:16:05 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void    assign_cost_a               (t_stacks *s);
 size_t  assign_cost_a_first_half    (t_stacks *s, size_t i);
 void    assign_cost_a_second_half_odd(t_stacks *s, size_t i);
 void    assign_cost_a_second_half_even(t_stacks *s, size_t i);
-void    assign_target_a             (t_stacks *s);
+void    assign_target_a             (t_stacks *s, size_t i, size_t j, int smallest_number_a);
 size_t  biggest_number_array        (t_stacks *s);
 size_t  cheapest_number             (t_stacks *s);
 int     error_bigger_than_int       (char *argv[]);
@@ -52,6 +52,7 @@ int     error_checker_is_digit      (char *argv[]);
 int     error_duplicate_checker     (int *array_a, int size_array_a);
 int     error_message               (int code, t_stacks *stacks);
 void    free_struct                 (t_stacks *s);
+int     find_target(t_stacks *s, size_t i, size_t j, int smallest_number_a);
 void    init_stacks                 (size_t size_stack_a, t_stacks *stacks, int *stack_a);
 void    move_at_top_then_push       (t_stacks *s, size_t cheapest);
 void    move_at_top_b_then_push     (t_stacks *s);

@@ -1,46 +1,59 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/20 16:24:05 by ldevoude          #+#    #+#             */
+/*   Updated: 2025/03/20 16:24:05 by ldevoude         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header/push_swap.h"
-//working in theory
 
-//function seem to be working well, still need to make it smoller + make sure everything is fine.
-void assign_target_a(t_stacks *s) //to place into sort_utils whenever u finished
+int	find_target(t_stacks *s, size_t i, size_t j, int smallest_number_a)
 {
-    size_t i;
-    size_t j;
-    int    smallest_number_a;
-    size_t biggest_number_b;
-
-    i = 0;
-    biggest_number_b = biggest_number_array(s);
-    while(i <= s->size_a)
-    {
-        j = 0;
-        smallest_number_a = TRUE;
-        while(j < s->size_b)
-        {
-            if (s->array_b[j] < s->array_a[i] || (s->array_b[j] <= s->array_a[i] && smallest_number_a == TRUE)) //TOCHECK smallest number == true may be unecessary
-            {    
-                if (!(smallest_number_a == FALSE && s->array_b[j] < s->array_b[s->target_a[i]]))
-                {
-                    smallest_number_a = FALSE;
-                    //printf("je passe ici%zu\n", i);
-                    s->target_a[i] = j;
-                }
-                else if (smallest_number_a == TRUE && s->array_b[j] > s->array_b[s->target_a[i]])
-                    s->target_a[i] = j;
-            }
-            j++;
-        }
-        if (smallest_number_a == TRUE)
-            s->target_a[i] = biggest_number_b;
-        i++;
-    }
-    debug_assign_target(s);
+	while (j < s->size_b)
+	{
+		if (s->array_b[j] < s->array_a[i] || (s->array_b[j] <= s->array_a[i]
+				&& smallest_number_a == TRUE))
+		{
+			if (!(smallest_number_a == FALSE
+					&& s->array_b[j] < s->array_b[s->target_a[i]]))
+			{
+				smallest_number_a = FALSE;
+				s->target_a[i] = j;
+			}
+			else if (smallest_number_a == TRUE
+				&& s->array_b[j] > s->array_b[s->target_a[i]])
+				s->target_a[i] = j;
+		}
+		j++;
+	}
+	return (smallest_number_a);
 }
 
-size_t biggest_number_array(t_stacks *s)
+void	assign_target_a(t_stacks *s, size_t i, size_t j, int smallest_number_a)
 {
-	size_t i;
-	size_t result;
+	size_t	biggest_number_b;
+
+	biggest_number_b = biggest_number_array(s);
+	while (i <= s->size_a)
+	{
+		j = 0;
+		smallest_number_a = TRUE;
+		smallest_number_a = find_target(s, i, j, smallest_number_a);
+		if (smallest_number_a == TRUE)
+			s->target_a[i] = biggest_number_b;
+		i++;
+	}
+}
+
+size_t	biggest_number_array(t_stacks *s)
+{
+	size_t	i;
+	size_t	result;
 
 	result = 0;
 	i = 1;

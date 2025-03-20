@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:08:28 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 14:49:58 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/20 16:04:21 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	step_two(t_stacks *s)
 
 	while (s->size_a != 3)
 	{
-		assign_target_a(s);
+		assign_target_a(s, 0, 0, TRUE);
 		assign_cost_a(s);
 		sub_cost_rr_rrr(s);
 		cheapest = cheapest_move_cost(s);
