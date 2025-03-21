@@ -6,7 +6,7 @@
 /*   By: ldevoude <ldevoude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:08:28 by ldevoude          #+#    #+#             */
-/*   Updated: 2025/03/20 16:48:38 by ldevoude         ###   ########lyon.fr   */
+/*   Updated: 2025/03/21 11:46:08 by ldevoude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,16 +66,18 @@ void	step_one(t_stacks *s)
 	{
 		if (s->array_a[0] > s->array_a[1])
 			swap_a(s);
-		exit(0);
 	}
 	else if (s->size_a == 3)
+	{
 		sort_three(s);
+	}
 	else if (s->size_a == 4)
 	{
 		push_b(s);
 		sort_three(s);
+		step_three(s);
 	}
-	else
+	else if (s->size_a > 4)
 	{
 		push_b(s);
 		push_b(s);
@@ -83,7 +85,6 @@ void	step_one(t_stacks *s)
 	}
 }
 
-// TODO check if at some point it can fail
 int	steps_push_swap(t_stacks *stacks)
 {
 	before_debug(stacks);
